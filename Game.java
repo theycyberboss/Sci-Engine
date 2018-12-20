@@ -19,6 +19,8 @@ public class Game implements Runnable
    
    private Player player;
    private Handler handler;
+   private Keyboard keyboard;
+   private Mouse mouse;
     
    public Game()
    {
@@ -29,13 +31,18 @@ public class Game implements Runnable
    public void engineInit()
    { 
        handler = new Handler();
-       player = new Player(100,100);  
+       keyboard = new Keyboard();
+       mouse = new Mouse();
        isRunning = false;
        fps = 0;
        
        window = new Window(720,480,"New Window");
        renderer = new Renderer(window);
        window.addComponent(renderer.getCanvas());
+       
+       renderer.getCanvas().addKeyListener(keyboard);
+       renderer.getCanvas().addMouseListener(mouse);
+       renderer.getCanvas().addMouseMotionListener(mouse);
        renderer.init();    
        
 
@@ -43,6 +50,8 @@ public class Game implements Runnable
    
    public void gameInit()
    {
+       player = new Player(100,100);
+       
        handler.addObject(player);
 
    }
@@ -54,6 +63,8 @@ public class Game implements Runnable
    
    private void render()
    {
+       renderer.resizeGraphics(window.getBaseWidth(),window.getBaseHeight(),window.getWidth(),window.getHeight());
+       
        Graphics2D g = renderer.getGraphics();
        g.setColor(Color.black);
        g.fillRect(0,0,100,100); 
@@ -125,5 +136,6 @@ public class Game implements Runnable
    {
        return renderer;
    }
+   
     
 }

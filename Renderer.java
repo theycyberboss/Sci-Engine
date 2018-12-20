@@ -15,11 +15,15 @@ public class Renderer
     private Graphics2D g;
     private BufferStrategy bs;
     
+    private double scaleX,scaleY;
+    
     public Renderer(Window window)
     {
         canvas = new Canvas();
         canvas.setSize(window.getWidth(),window.getHeight());
        
+        scaleX = 1;
+        scaleY = 1;
     }
     
     public void init()
@@ -53,6 +57,24 @@ public class Renderer
     public Graphics2D getGraphics()
     {
         return g;
+    }
+    
+    public void resizeGraphics(int baseWidth, int baseHeight, int newWidth, int newHeight)
+    {
+        scaleX = newWidth / (baseWidth * 1.0);
+        scaleY = newHeight / (baseHeight * 1.0);
+
+        g.scale(scaleX, scaleY);
+    }
+    
+    public double getScaleX()
+    {
+        return scaleX;
+    }
+    
+    public double getScaleY()
+    {
+        return scaleY;
     }
     
 }

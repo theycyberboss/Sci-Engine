@@ -27,7 +27,7 @@ public class Player implements GameObject
     
     public void update(Game game)
     {
-        x += 1;
+    
     }
     
     public void setX(int x)
