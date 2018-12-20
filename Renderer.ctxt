@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=window
+comment0.target=Renderer(Window)
+comment1.params=
+comment1.target=void\ init()
+comment2.params=
+comment2.target=java.awt.Canvas\ getCanvas()
+comment3.params=
+comment3.target=void\ updateGraphics()
+comment4.params=
+comment4.target=void\ cleanUp()
+comment5.params=
+comment5.target=java.awt.Graphics2D\ getGraphics()
+numComments=6
