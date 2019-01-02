@@ -17,17 +17,20 @@ public class Player implements GameObject
     }
     
     
-    public void render(Game game)
+    public void render(Engine eng)
     {
-        Graphics2D g = game.getRenderer().getGraphics();
+        Graphics2D g = eng.getRenderer().getGraphicsScaled();
         
         g.setColor(Color.red);
         g.fillRect(x,y,32,32);
     }
     
-    public void update(Game game)
+    public void update(Engine eng)
     {
-    
+        if(Mouse.isClicked())
+        {
+            x = Mouse.getX();
+        }
     }
     
     public void setX(int x)

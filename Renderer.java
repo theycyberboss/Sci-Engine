@@ -12,7 +12,7 @@ import java.awt.image.*;
 public class Renderer
 {
     private Canvas canvas;
-    private Graphics2D g;
+    private Graphics2D g,gScale;
     private BufferStrategy bs;
     
     private double scaleX,scaleY;
@@ -59,12 +59,19 @@ public class Renderer
         return g;
     }
     
+    public Graphics2D getGraphicsScaled()
+    {
+        return gScale;
+    }
+    
     public void resizeGraphics(int baseWidth, int baseHeight, int newWidth, int newHeight)
     {
         scaleX = newWidth / (baseWidth * 1.0);
         scaleY = newHeight / (baseHeight * 1.0);
-
-        g.scale(scaleX, scaleY);
+        gScale = g;
+        
+        //g.scale(scaleX, scaleY);
+        gScale.scale(scaleX,scaleY);
     }
     
     public double getScaleX()

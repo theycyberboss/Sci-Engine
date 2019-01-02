@@ -26,7 +26,7 @@ public class Window
        //frame.setMaximumSize(dim);
        frame.setMinimumSize(dim);
        
-       frame.setResizable(false);
+       frame.setResizable(true);
        frame.setVisible(true);
        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
        

@@ -7,8 +7,8 @@
  */
 public interface GameObject
 {
-    public void render(Game game);
-    public void update(Game game);
+    public void render(Engine eng);
+    public void update(Engine eng);
     
     public void setX(int x);
     public void setY(int y);
