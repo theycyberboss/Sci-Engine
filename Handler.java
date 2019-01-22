@@ -7,6 +7,7 @@
  */
 import java.awt.*;
 import java.util.*;
+import java.awt.geom.*;
 public class Handler
 {
     private static LinkedList<GameObject> objects;
@@ -43,8 +44,19 @@ public class Handler
     {
         for(int i = 0; i < objectCount; i++)
         {
+           
             GameObject temp = objects.get(i);
-            temp.render(eng);            
+            
+            Graphics2D g = eng.getRenderer().getGraphics();
+            AffineTransform old = g.getTransform();
+            
+            g.rotate(Math.toRadians(temp.getRotation()));
+            
+            
+            temp.render(eng);
+            g.setTransform(old);
+            
+                        
         }
         
     }

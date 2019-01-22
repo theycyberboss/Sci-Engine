@@ -5,14 +5,43 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-public interface GameObject
+import java.awt.*;
+import java.util.*;
+import java.awt.geom.*;
+public abstract class GameObject
 {
-    public void render(Engine eng);
-    public void update(Engine eng);
+    private AffineTransform old;
+    private double rotation = 0;
     
-    public void setX(int x);
-    public void setY(int y);
+    private int x,y;
     
-    public int getX();
-    public int getY();
+    public abstract void render(Engine eng);
+    public abstract void update(Engine eng);
+    
+    public abstract void setX(int x);
+    public abstract void setY(int y);
+    
+    public abstract int getX();
+    public abstract int getY();
+    
+    public void setRotation(double degrees){
+        rotation = degrees;
+         
+    }
+    
+    public AffineTransform getTransform(){
+        return old;
+    }
+    
+    public void setTransform(AffineTransform at){
+        old = at;
+    }
+    
+    public double getRotation(){
+        return rotation;
+    }
+  
+    
+
+    
 }

@@ -6,7 +6,7 @@
  * @version (a version number or a date)
  */
 import java.awt.*;
-public class Player implements GameObject
+public class Player extends GameObject
 {
     private int x,y;
     
@@ -14,12 +14,14 @@ public class Player implements GameObject
     {
         this.x = x;
         this.y = y;
+        
+       
     }
     
     
     public void render(Engine eng)
     {
-        Graphics2D g = eng.getRenderer().getGraphicsScaled();
+        Graphics2D g = eng.getRenderer().getGraphics();
         
         g.setColor(Color.red);
         g.fillRect(x,y,32,32);
@@ -27,10 +29,14 @@ public class Player implements GameObject
     
     public void update(Engine eng)
     {
-        if(Mouse.isClicked())
+        if(Keyboard.keyPressed(KeyCodes.K_S))
         {
-            x = Mouse.getX();
+            y += 2;
         }
+        
+        
+        
+        
     }
     
     public void setX(int x)

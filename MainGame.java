@@ -13,7 +13,7 @@ public class MainGame implements Game
   
    public void init()
    {
-       Handler.addObject(new Player(100,100));
+       Handler.addObject(new Player(300,300));
    }
    
    public void update(Engine eng)

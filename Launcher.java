@@ -11,7 +11,9 @@ public class Launcher
     {
         MainGame Game = new MainGame();
         
-        Engine mainEngine = new Engine(Game);
+        
+        Engine mainEngine = new Engine(Game,720,480,"Game Engine",true);
+        
         mainEngine.start();
     }
 }

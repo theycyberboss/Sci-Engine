@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ init()
+comment1.params=eng
+comment1.target=void\ update(Engine)
+comment2.params=eng\ rend
+comment2.target=void\ render(Engine,\ Renderer)
+numComments=3
